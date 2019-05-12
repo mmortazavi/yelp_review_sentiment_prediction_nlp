@@ -1,4 +1,4 @@
-# yelp_review_sentiment_prediction_nlp
+# Yelp Review Sentiment Prediction using NLP (Glove)
 This repo demonstrate a sentiment prediction based on Yelp reviews using natural language processing based on Glove word embeddings in Keras.
 
 # It contains:
