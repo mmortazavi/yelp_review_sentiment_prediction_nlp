@@ -9,4 +9,4 @@ This repo demonstrate a sentiment prediction based on Yelp reviews using natural
     - resutls dir: figures i.e. model training history
 
 #  How to use:
-python setup.py
+    python setup.py
