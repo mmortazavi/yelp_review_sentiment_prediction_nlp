@@ -1,18 +1,26 @@
 #Base image
-FROM python:3.6
+FROM  python:3.6 
+#gw000/keras:2.1.4-py3-tf-cpu 
+#python:3.6
 
 # Updating repository sources
 RUN apt-get update
+# RUN apt-get update -qq \
+#  && apt-get install --no-install-recommends -y \
+#     python-matplotlib \
 
 # Copying requirements.txt file
-COPY requirements.txt requirements.txt
+COPY ./requirements.txt /requirements.txt
 
-# pip install 
+# pip install all requirements
 RUN pip install --no-cache -r requirements.txt
+RUN python -m nltk.downloader stopwords
 
-# Exposing ports
-EXPOSE 8888
+# Setting up working directory
+WORKDIR /
 
-# Running jupyter notebook
-# --NotebookApp.token ='demo' is the password
-CMD ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token='demo'"]
+# Copy from local host to Docker image
+COPY . /
+
+# Training the Model
+CMD ["python", "setup.py"]

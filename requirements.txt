@@ -1,7 +1,8 @@
-jupyter
 matplotlib
 numpy
+pandas
 scikit-learn
 tensorflow
 keras
+pyarrow
 nltk

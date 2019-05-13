@@ -1,4 +1,3 @@
-
 import os
 import warnings
 import matplotlib
@@ -9,7 +8,7 @@ from keras.preprocessing.sequence import pad_sequences
 from sklearn.model_selection import train_test_split
 
 from yelp.model import run
-from yelp.data import read_json_to_df
+from yelp.data import read_json_to_df, read_parquet_to_df
 from yelp.preprocessing import text_clean
 from yelp.utils import target_binning, target_to_categorical
 from yelp.preprocessing import tokenize, create_embedding_matrix
@@ -17,11 +16,11 @@ from yelp.preprocessing import tokenize, create_embedding_matrix
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-RESULT_PATH = '/Users/majidmortazavi/GitHub/interveiew_excercises/NewYorker/resutls'
-DATA_PATH = '/Users/majidmortazavi/data_sciences/case_studies/NewYorker/data/'
-DATA_FILE = 'review.json'
+RESULT_PATH = '../resutls'
+DATA_PATH = 'data'
+DATA_FILE = 'yelp_reveiw_chunk.parquet'
 
-EMBEDDING_PATH = '/Users/majidmortazavi/data_sciences/embeddings'
+EMBEDDING_PATH = 'embedding'
 EMBEDDING_VEC = 'glove.6B.100d.txt'
 EMBEDDING_DIM = 100
 
@@ -31,7 +30,9 @@ def main():
     print('Reading and Cleaning Data...')
     start = time.time()
 
-    df = read_json_to_df(DATA_PATH, DATA_FILE, chunk_size = 100000)
+    ## Either using the original JSON REVEIW FILE, or smaller sized parquet file of the 1000-Chunk of JSON.
+    # df = read_json_to_df(DATA_PATH, DATA_FILE, chunk_size = 100000)
+    df = read_parquet_to_df(DATA_PATH, DATA_FILE)
 
     # Drop Unnecessary Columns
     df = df.drop(['review_id','user_id','business_id','date','useful','funny','cool'],axis=1)
@@ -80,8 +81,8 @@ def main():
                     EMBEDDING_DIM, 
                     embedding_matrix, 
                     max_seq_length,
-                    epochs = 20,
-                    batch_size = 256,
+                    epochs = 10,
+                    batch_size = 512,
                     path_to_fig = RESULT_PATH,
                     target_names = list(mapping))
 

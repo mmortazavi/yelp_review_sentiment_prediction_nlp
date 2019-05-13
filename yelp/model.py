@@ -64,7 +64,7 @@ def run(x_train,y_train,
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
-    fig1.savefig(os.path.join(path_to_fig, 'acc.pdf'), dpi=300, bbox_inches='tight')
+    # fig1.savefig(os.path.join(path_to_fig, 'acc.pdf'), dpi=300, bbox_inches='tight')
 
     # summarize history for loss
     fig2 = plt.figure()
@@ -74,7 +74,7 @@ def run(x_train,y_train,
     plt.ylabel('loss')
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
-    fig2.savefig(os.path.join(path_to_fig, 'loss.pdf'), dpi=300, bbox_inches='tight')
+    # fig2.savefig(os.path.join(path_to_fig, 'loss.pdf'), dpi=300, bbox_inches='tight')
     print('Model Training Hostory Saved in Results Directory.')
     print()
 

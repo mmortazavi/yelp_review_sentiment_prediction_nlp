@@ -21,7 +21,6 @@ import os.path
 import pandas as pd
 import numpy as np
 import re
-from wordcloud import WordCloud
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt

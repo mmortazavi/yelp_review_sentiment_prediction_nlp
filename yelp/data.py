@@ -22,7 +22,6 @@ __email__ = "maj.mortazavi@gmail.com"
 def read_parquet_to_df(path, filename):
 
     df = pd.read_parquet(os.path.join(path, filename),engine='pyarrow')
-    # df = df.drop(['review_id','user_id','business_id','date','useful','funny','cool'],axis=1)
 
     return df
 
