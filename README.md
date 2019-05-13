@@ -6,7 +6,7 @@ This repo demonstrate a sentiment prediction based on Yelp reviews using natural
     git clone git@github.com:mmortazavi/yelp_review_sentiment_prediction_nlp.git
 ### 2. Install requirements
     pip install requirements.txt
-### 3. Download `glove.6B.100d.txt` Glove Embedding(https://www.kaggle.com/terenceliu4444/glove6b100dtxt)
+### 3. Download [glove.6B.100d.txt](https://www.kaggle.com/terenceliu4444/glove6b100dtxt) Glove Embedding
     copy glove.6B.100d.txt embedding
 ### 4. Navigate into yelp_review_sentiment_prediction_nlp directory, and run:
     python setup.py
