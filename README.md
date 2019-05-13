@@ -2,13 +2,13 @@
 This repo demonstrate a sentiment prediction based on Yelp reviews using natural language processing based on Glove word embeddings in Keras.
 
 ##  How to Use:
-###1. Clone in local directory
+### 1. Clone in local directory
     git clone git@github.com:mmortazavi/yelp_review_sentiment_prediction_nlp.git
-###2. Install requirements
+### 2. Install requirements
     pip install requirements.txt
-###3. Download `glove.6B.100d.txt` Glove Embedding(https://www.kaggle.com/terenceliu4444/glove6b100dtxt)
+### 3. Download `glove.6B.100d.txt` Glove Embedding(https://www.kaggle.com/terenceliu4444/glove6b100dtxt)
     copy glove.6B.100d.txt embedding
-###4. Navigate into yelp_review_sentiment_prediction_nlp directory, and run:
+### 4. Navigate into yelp_review_sentiment_prediction_nlp directory, and run:
     python setup.py
       
 ##  Results after 20 Epochs on 1 Millions Data Points:
@@ -80,7 +80,7 @@ This repo demonstrate a sentiment prediction based on Yelp reviews using natural
     - yelp dir: list of all python modules
     
 ##  Easy Approach:Run the Docker Container
-###1. Pull the Image from DockerHub:
+### 1. Pull the Image from DockerHub:
     docker pull majidmortazavi/yelp_review_sentiment_prediction_nlp
-###2. Run the Container locally:
+### 2. Run the Container locally:
     docker run -t yelp_review_sentiment_prediction_nlp
