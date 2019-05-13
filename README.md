@@ -1,17 +1,13 @@
 # Yelp Review Sentiment Prediction using NLP (Glove)
 This repo demonstrate a sentiment prediction based on Yelp reviews using natural language processing based on Glove word embeddings in Keras.
 
-## Repo Contains:
-    - yelp dir: list of all python modules
-    - notebook dir: 
-        - 'EDA' exploratory data analysis  on Yelp reviews
-        - 'NLP-Glove_SentimentAnalysis' demonstrate a run of the model and results
-    - resutls dir: figures i.e. model training history
-    - setup.py, main file for running the project. 
-      important: please note some variables like DATA_PATH, DATA_FILE, RESULT_PATH, EMBEDDING_PATH, EMBEDDING_VEC, EMBEDDING_DIM need to be modified.
-
 ##  How to Use:
-    python setup.py
+    - Clone in local directory
+       git clone git@github.com:mmortazavi/yelp_review_sentiment_prediction_nlp.git
+    - Download `glove.6B.100d.txt` Glove Embedding from this link [https://www.kaggle.com/terenceliu4444/glove6b100dtxt], and Put it under the embedding directory
+    - Navigate into yelp_review_sentiment_prediction_nlp directory, and run:
+      python setup.py
+      
 ##  Results after 20 Epochs on 1 Millions Data Points:
     
     Epoch 1/20
@@ -70,7 +66,18 @@ This repo demonstrate a sentiment prediction based on Yelp reviews using natural
     weighted avg       0.89      0.89      0.89     20000
 
     ----------------------------------------------------------------------------------------------------
+## The Repo Contains:
+    - data dir: a small fraction of yelp reviews in parquet format
+    - notebook dir: 
+        - 'EDA' exploratory data analysis  on Yelp reviews
+        - 'NLP-Glove_SentimentAnalysis' demonstrate a run of the model and results
+    - resutls dir: figures i.e. model training history
+    - setup.py, main file for running the project. 
+      important: please note some variables like DATA_PATH, DATA_FILE, RESULT_PATH, EMBEDDING_PATH, EMBEDDING_VEC, EMBEDDING_DIM need to be modified.
+    - yelp dir: list of all python modules
     
-##  Run on Docker
+##  Easy Approach:Run the Docker Container
+    - pull the image:
     docker pull majidmortazavi/yelp_review_sentiment_prediction_nlp
+    - run the image:
     docker run -t yelp_review_sentiment_prediction_nlp
