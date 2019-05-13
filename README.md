@@ -72,3 +72,5 @@ This repo demonstrate a sentiment prediction based on Yelp reviews using natural
     ----------------------------------------------------------------------------------------------------
     
 ##  Run on Docker
+    docker pull majidmortazavi/yelp_review_sentiment_prediction_nlp
+    docker run -t yelp_review_sentiment_prediction_nlp
